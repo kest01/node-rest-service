@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  postgresql:
+    container_name: postgresql
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_USER: test
+      APP_SCHEMA: test
+      DEFAULT_SCHEMA: public
+      DB_HOST: postgresql
+    ports:
+      - 5432:5432
+
