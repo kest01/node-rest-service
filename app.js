@@ -5,6 +5,8 @@ const cors = require("cors");
 
 var indexRouter = require('./routes/index');
 var formsRouter = require('./routes/forms');
+var loginRouter = require('./routes/login');
+var profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -20,6 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/api/forms', formsRouter);
+loginRouter(app)
+profileRouter(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
